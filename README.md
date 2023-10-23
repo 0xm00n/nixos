@@ -1,6 +1,6 @@
 # nixOS
 
-```python
+```
   \\  \\ //      m00n@wired
  ==\\__\\/ //    os     NixOS 23.05
    //   \\//     host   ROG Strix G15 Advantage Edition
@@ -12,4 +12,4 @@
 
 <br>
 
-i plan to dual boot nixOS with either windows 10 or windows 11 ameliorated.
+[!] i plan to dual boot nixOS with either windows 10 or windows 11 ameliorated.
