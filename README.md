@@ -1,6 +1,6 @@
 # nixOS
 
-```
+```python
   \\  \\ //      m00n@wired
  ==\\__\\/ //    os     NixOS 23.05
    //   \\//     host   ROG Strix G15 Advantage Edition
