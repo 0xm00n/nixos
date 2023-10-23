@@ -10,4 +10,6 @@
   // \\  \\      memory 2.7G / 63.7G
 ```
 
-a living repo for my dots
+<br>
+
+i plan to dual boot nixOS with either win10 or win11 ameliorated.
