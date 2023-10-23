@@ -12,4 +12,4 @@
 
 <br>
 
-i plan to dual boot nixOS with either win10 or win11 ameliorated.
+i plan to dual boot nixOS with either windows 10 or windows 11 ameliorated.
