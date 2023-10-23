@@ -14,7 +14,7 @@
 
 ## To Do
 
-- [ ] install webcord
+- [X] install webcord
 - [ ] troubleshoot waybar: intall MPD, figure out GTK error, figure out missing emojis/symbols not rendering
 - [ ] MPD + pipewire config
 - [ ] gtk5-wayland and gtk6-wayland install??
