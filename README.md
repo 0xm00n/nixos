@@ -29,9 +29,8 @@
 
 #### Packages
 - [X] webcord
-- [ ] get rid of bluedevil
-- [ ] bluez-utils
-- [ ] blueman-applet
+- [X] get rid of bluedevil
+- [X] get bluetooth working
 - [ ] python3
   - [ ] pytorch 2.1 w/ ROCm GPU acceleration
 
