@@ -20,7 +20,7 @@
   - [ ] pytorch 2.1 w/ ROCm GPU acceleration
 
 #### Waybar
-- [ ] troubleshoot waybar: intall MPD, figure out GTK error, figure out missing emojis/symbols not rendering
+- [X] troubleshoot waybar: intall MPD, figure out GTK error, figure out missing emojis/symbols not rendering
 - [ ] MPD + pipewire config
 - [ ] gtk5-wayland and gtk6-wayland install??
 - [ ] configure waybar to my aesthetic specs
