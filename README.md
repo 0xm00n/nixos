@@ -13,10 +13,10 @@
 ▟███████████▛                  ▟██████████▙   DE: Hyprland (Wayland) 
 ▜██████████▛                  ▟███████████▛   Terminal: kitty 
       ▟███▛ ▟▙               ▟███▛            Terminal Font: jetbrains mono nerd font 12.0 
-     ▟███▛ ▟██▙             ▟███▛             CPU: AMD Ryzen 9 5900HX
-    ▟███▛  ▜███▙           ▝▀▀▀▀              GPU: Radeon RX 6800M 
-    ▜██▛    ▜███▙ ▜██████████████████▛        Memory: 6.3GiB / 63.7GiB
-     ▜▛     ▟████▙ ▜████████████████▛          
+     ▟███▛ ▟██▙             ▟███▛             Terminal Prompt: starship
+    ▟███▛  ▜███▙           ▝▀▀▀▀              CPU: AMD Ryzen 9 5900HX
+    ▜██▛    ▜███▙ ▜██████████████████▛        GPU: Radeon RX 6800M
+     ▜▛     ▟████▙ ▜████████████████▛         Memory: 6.3GiB / 63.7GiB 
            ▟██████▙       ▜███▙
           ▟███▛▜███▙       ▜███▙                                      
          ▟███▛  ▜███▙       ▜███▙                                     
