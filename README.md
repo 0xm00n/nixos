@@ -14,13 +14,24 @@
 
 ## To Do
 
-- [X] install webcord
+#### Packages
+- [X] webcord
+- [ ] python3
+  - [ ] pytorch 2.1 w/ ROCm GPU acceleration
+
+#### Waybar
 - [ ] troubleshoot waybar: intall MPD, figure out GTK error, figure out missing emojis/symbols not rendering
 - [ ] MPD + pipewire config
 - [ ] gtk5-wayland and gtk6-wayland install??
+- [ ] configure waybar to my aesthetic specs
+
+#### Terminal
 - [ ] configure kitty terminal to my aesthetic spec
 - [ ] configure starship with nixOS symbol prompt and maybe some other stuff
-- [ ] configure waybar to my aesthetic specs
+
+#### Hyprland
 - [ ] configure hyprland.conf for launching waybar, swww wallpaper things, nm-applet, etc.
 - [ ] get a file manager and config to my aesthetic spec
-- [ ] dual boot nixOS with either windows 10 or windows 11 ameliorated.
+
+#### Windows Dual Boot
+- [ ] decide either windows 10 or windows 11 ameliorated.
