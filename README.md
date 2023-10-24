@@ -29,6 +29,9 @@
 
 #### Packages
 - [X] webcord
+- [ ] get rid of bluedevil
+- [ ] bluez-utils
+- [ ] blueman-applet
 - [ ] python3
   - [ ] pytorch 2.1 w/ ROCm GPU acceleration
 
@@ -46,7 +49,11 @@
 - [ ] configure starship with nixOS symbol prompt and maybe some other stuff
 
 #### Hyprland
-- [ ] configure hyprland.conf for launching waybar, swww wallpaper things, nm-applet, etc.
+- [ ] configure hyprland.conf for launching:
+  - [ ] waybar
+  - [ ] swww wallpaper things
+  - [ ] nm-applet
+  - [ ] blueman-applet
 - [ ] get a file manager and config to my aesthetic spec
 
 #### Windows Dual Boot
