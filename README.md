@@ -49,6 +49,7 @@
 - [ ] configure starship with nixOS symbol prompt and maybe some other stuff
 
 #### Hyprland
+- [ ] tweak monitor settings for 2nd monitor
 - [ ] configure hyprland.conf for launching:
   - [ ] waybar
   - [ ] swww wallpaper things
