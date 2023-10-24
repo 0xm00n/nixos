@@ -21,8 +21,8 @@
 
 #### Waybar
 - [X] troubleshoot waybar: intall MPD, figure out GTK error, figure out missing emojis/symbols not rendering
-- [ ] MPD + pipewire config
-- [ ] gtk5-wayland and gtk6-wayland install??
+- [ ] figure out where tf default waybar config file is located in??
+- [ ] figure out brightness control
 - [ ] configure waybar to my aesthetic specs
 
 #### Terminal
