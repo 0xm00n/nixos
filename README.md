@@ -21,7 +21,10 @@
 
 #### Waybar
 - [X] troubleshoot waybar: intall MPD, figure out GTK error, figure out missing emojis/symbols not rendering
-- [ ] figure out where tf default waybar config file is located in??
+- [ ] missing one symbol (i think its the brightness)
+- [ ] figure out default waybar config file location
+  - [ ] or do i create my own which overwrites its
+  - [ ] is it using pulseaudio (default does), if so how is it working out of box because i have pipewire
 - [ ] figure out brightness control
 - [ ] configure waybar to my aesthetic specs
 
