@@ -1,13 +1,26 @@
 # nixOS
 
 ```
-  \\  \\ //      m00n@wired
- ==\\__\\/ //    os     NixOS 23.05
-   //   \\//     host   ROG Strix G15 Advantage Edition
-==//     //==    cpu    AMD Ryzen 9 5900HX
- //\\___//       gpu    Radeon RX 6800M
-// /\\  \\==     de     hyprland
-  // \\  \\      memory 2.7G / 63.7G
+          ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖            moon@wired 
+          ▜███▙       ▜███▙  ▟███▛            ---------- 
+           ▜███▙       ▜███▙▟███▛             OS: NixOS 23.05 (Stoat)
+            ▜███▙       ▜██████▛              Host: ROG Strix G15 Advantage Edition
+     ▟█████████████████▙ ▜████▛     ▟▙        Kernel: 6.5.7 
+    ▟███████████████████▙ ▜███▙    ▟██▙       Uptime: 8 hours, 25 mins 
+           ▄▄▄▄▖           ▜███▙  ▟███▛       Packages: 1164 (nix-system) 
+          ▟███▛             ▜██▛ ▟███▛        Shell: fish 3.6.1 
+         ▟███▛               ▜▛ ▟███▛         Resolution: 1920x1080 
+▟███████████▛                  ▟██████████▙   DE: Hyprland (Wayland) 
+▜██████████▛                  ▟███████████▛   Terminal: kitty 
+      ▟███▛ ▟▙               ▟███▛            Terminal Font: jetbrains mono nerd font 12.0 
+     ▟███▛ ▟██▙             ▟███▛             CPU: AMD Ryzen 9 5900HX
+    ▟███▛  ▜███▙           ▝▀▀▀▀              GPU: Radeon RX 6800M 
+    ▜██▛    ▜███▙ ▜██████████████████▛        Memory: 6.3GiB / 63.7GiB
+     ▜▛     ▟████▙ ▜████████████████▛          
+           ▟██████▙       ▜███▙
+          ▟███▛▜███▙       ▜███▙                                      
+         ▟███▛  ▜███▙       ▜███▙                                     
+         ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘
 ```
 
 <br>
