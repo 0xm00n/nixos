@@ -31,6 +31,7 @@
 - [X] webcord
 - [X] get rid of bluedevil
 - [X] get bluetooth working
+- [ ] pypy3
 - [ ] python3
   - [ ] pytorch 2.1 w/ ROCm GPU acceleration
 
