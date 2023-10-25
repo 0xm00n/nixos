@@ -1,6 +1,16 @@
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, ... }: let
+   flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+   webcord = (import flake-compat {
+     src = builtins.fetchTarball "https://github.com/fufexan/webcord-flake/archive/master.tar.gz";
+   }).defaultNix;
+   py-pkgs = ps: with ps; [
+     pandas
+     tqdm
+     matplotlib
+     scipy
+     scikit-learn
+   ];
+in {
   imports =
     [
       ./hardware-configuration.nix
@@ -47,7 +57,11 @@
     jack.enable = true;
   };
   hardware.pulseaudio.enable = false;
+
+  # bluetooth
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
 
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
@@ -67,6 +81,7 @@
 
   fonts.enableDefaultFonts = true;
   fonts.fonts = with pkgs; [
+    nerdfonts
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
@@ -76,6 +91,12 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
+    font-awesome
+    noto-fonts-extra
+    source-han-sans-japanese
+    source-han-sans-korean
+    source-han-sans-simplified-chinese
+    source-han-sans-traditional-chinese
   ];
 
   users.users.amon = {
@@ -112,13 +133,15 @@
     distrobox
     cmake
     clang
-    bluez
-    bluedevil
     curl
     neofetch
     vlc
     starship
     fontfor
+    webcord.packages.${system}.default
+    brightnessctl
+    (python3.withPackages py-pkgs)
+    pamixer
   ];
 
   system.stateVersion = "23.05";
