@@ -47,7 +47,10 @@
 
 #### Terminal
 - [ ] configure kitty terminal to my aesthetic spec
-- [ ] configure starship with nixOS symbol prompt and maybe some other stuff
+- [ ] configure starship with nixOS symbol prompt and maybe some other 
+
+#### Locker
+- [ ] install swaylock-effects and configure it
 
 #### Hyprland
 - [ ] tweak monitor settings for 2nd monitor
