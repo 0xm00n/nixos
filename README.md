@@ -58,7 +58,7 @@
   - [X] waybar
   - [ ] swww wallpaper things
   - [X] nm-applet
-  - [X ] blueman-applet
+  - [X] blueman-applet
 - [ ] put in ROG laptop specific key binds
 - [ ] get a file manager and config to my aesthetic spec
 
