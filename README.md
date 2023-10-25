@@ -31,17 +31,18 @@
 - [X] webcord
 - [X] get rid of bluedevil
 - [X] get bluetooth working
-- [ ] pypy3
-- [ ] python3
-  - [ ] pytorch 2.1 w/ ROCm GPU acceleration
+- [X] pypy3
+- [X] python3
+- [ ] docker
+- [ ] pytorch 2.1 w/ ROCm GPU acceleration
 
 #### Waybar
 - [X] troubleshoot waybar: intall MPD, figure out GTK error, figure out missing emojis/symbols not rendering
-- [ ] missing one symbol (i think its the brightness)
+- [X] missing one symbol (i think its the brightness)
 - [ ] figure out default waybar config file location
   - [ ] or do i create my own which overwrites its
   - [ ] is it using pulseaudio (default does), if so how is it working out of box because i have pipewire
-- [ ] figure out brightness control
+- [X] figure out brightness control
 - [ ] configure waybar to my aesthetic specs
 
 #### Terminal
@@ -51,9 +52,9 @@
 #### Hyprland
 - [ ] tweak monitor settings for 2nd monitor
 - [ ] configure hyprland.conf for launching:
-  - [ ] waybar
+  - [X] waybar
   - [ ] swww wallpaper things
-  - [ ] nm-applet
+  - [X] nm-applet
   - [ ] blueman-applet
 - [ ] get a file manager and config to my aesthetic spec
 
