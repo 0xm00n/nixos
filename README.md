@@ -47,7 +47,7 @@
 
 #### Terminal
 - [ ] configure kitty terminal to my aesthetic spec
-- [ ] configure starship with nixOS symbol prompt and maybe some other 
+- [X] configure starship prompt 
 
 #### Locker
 - [ ] install swaylock-effects and configure it
