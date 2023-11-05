@@ -7,7 +7,7 @@
             ▜███▙       ▜██████▛              Host: ROG Strix G15 Advantage Edition
      ▟█████████████████▙ ▜████▛     ▟▙        Kernel: 6.5.7 
     ▟███████████████████▙ ▜███▙    ▟██▙       Uptime: 8 hours, 25 mins 
-           ▄▄▄▄▖           ▜███▙  ▟███▛       Packages: 1164 (nix-system) 
+           ▄▄▄▄▖           ▜███▙  ▟███▛       Packages: 1622 (nix-system) 
           ▟███▛             ▜██▛ ▟███▛        Shell: fish 3.6.1 
          ▟███▛               ▜▛ ▟███▛         Resolution: 1920x1080 
 ▟███████████▛                  ▟██████████▙   DE: Hyprland (Wayland) 
