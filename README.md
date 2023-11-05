@@ -25,6 +25,6 @@
 
 ## other stuff
 - virt-manager + qemu for windows 10 vm (ameliorated + ReviOS playbook, only for microsoft word lol cuz libreoffice sucks)
-- distrobox (podman)
+- distrobox (podman) for ML python dev
 - some random python libs like jupyterlab
 - i will get to making an organized dev environment with nix shell + flakes one day!
