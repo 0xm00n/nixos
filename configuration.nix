@@ -9,11 +9,13 @@
      matplotlib
      scipy
      scikit-learn
+     jupyterlab
    ];
 in {
   imports =
     [
       ./hardware-configuration.nix
+      ./vm.nix
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -80,19 +82,27 @@ in {
   };
 
   fonts.enableDefaultFonts = true;
+  fonts.fontDir.enable = true;
+  fonts.enableGhostscriptFonts = true;
   fonts.fonts = with pkgs; [
     nerdfonts
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
+    noto-fonts-extra
+
     liberation_ttf
+    ubuntu_font_family
+
     fira-code
     fira-code-symbols
+
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
-    font-awesome
-    noto-fonts-extra
+    victor-mono
+    font-awesome_5
+
     source-han-sans-japanese
     source-han-sans-korean
     source-han-sans-simplified-chinese
@@ -127,12 +137,15 @@ in {
     wl-clipboard
     unzip
     sudo
+
     gcc
+    cmake
+    clang
+    ninja
+
     ffmpeg
     file
     distrobox
-    cmake
-    clang
     curl
     neofetch
     vlc
@@ -142,6 +155,10 @@ in {
     brightnessctl
     (python3.withPackages py-pkgs)
     pamixer
+    vscodium
+    podman
+    libreoffice-qt
+    ntfs3g
   ];
 
   system.stateVersion = "23.05";
