@@ -24,6 +24,8 @@ in {
   boot.loader.systemd-boot.enable =true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   networking.hostName = "wired"; 
   networking.networkmanager.enable = true; 
   networking.firewall.enable = false;
@@ -109,56 +111,41 @@ in {
     source-han-sans-traditional-chinese
   ];
 
+  # docker
+  virtualisation.docker.enable = true;
+
   users.users.amon = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "input"];
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "input" "docker" ];
     initialPassword = "changeme";
     shell = pkgs.fish;
   };
 
   environment.systemPackages = with pkgs; [
-    wget
-    git
-    firefox
-    waybar
+    
+    # GUI
+    firefox vlc waybar swww kitty
+    mako libnotify rofi-wayland pamixer
+    networkmanagerapplet brightnessctl
     (waybar.overrideAttrs (oldAttrs: {
  	mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
       })
     )
-    mako
-    libnotify
-    swww
-    kitty
-    rofi-wayland
-    networkmanagerapplet
+    webcord.packages.${system}.default
+
     # screenshot pkgs
-    grim
-    slurp
-    wl-clipboard
+    grim slurp wl-clipboard
     unzip
     sudo
-
-    gcc
-    cmake
-    clang
-    ninja
-
-    ffmpeg
-    file
-    distrobox
-    curl
-    neofetch
-    vlc
-    starship
-    fontfor
-    webcord.packages.${system}.default
-    brightnessctl
+   
+    # dev
+    gcc cmake clang ninja distrobox
+    vscodium docker-compose git
     (python3.withPackages py-pkgs)
-    pamixer
-    vscodium
-    podman
-    libreoffice-qt
-    ntfs3g
+    
+    # cli
+    wget ffmpeg file curl neofetch
+    starship fontfor
   ];
 
   system.stateVersion = "23.05";
