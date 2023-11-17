@@ -23,6 +23,7 @@
          ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘
 ```
 
-## other stuff
+
 - virt-manager + qemu for windows 10 vm (ameliorated + ReviOS playbook, only for microsoft word lol cuz libreoffice sucks)
-- distrobox (docker) ubuntu for ML python dev
+- distrobox (docker)
+- various nix-shell dev envs
