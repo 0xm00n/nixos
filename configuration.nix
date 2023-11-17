@@ -1,16 +1,10 @@
-{ config, pkgs, ... }: let
+{config, pkgs, ... }: 
+let
    flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
    webcord = (import flake-compat {
      src = builtins.fetchTarball "https://github.com/fufexan/webcord-flake/archive/master.tar.gz";
    }).defaultNix;
-   py-pkgs = ps: with ps; [
-     pandas
-     tqdm
-     matplotlib
-     scipy
-     scikit-learn
-     jupyterlab
-   ];
+   obsidian = pkgs.callPackage ./packages/obsidian.nix {};
 in {
   imports =
     [
@@ -24,8 +18,16 @@ in {
   boot.loader.systemd-boot.enable =true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+  '';
+  security.polkit.enable = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
   networking.hostName = "wired"; 
   networking.networkmanager.enable = true; 
   networking.firewall.enable = false;
@@ -77,11 +79,8 @@ in {
   services.asusd.enable = true;
   services.asusd.enableUserService = true;
   
+  # enable fish
   programs.fish.enable = true;
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
 
   fonts.enableDefaultFonts = true;
   fonts.fontDir.enable = true;
@@ -114,6 +113,16 @@ in {
   # docker
   virtualisation.docker.enable = true;
 
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
+  # unfree pkgs
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
   users.users.amon = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "input" "docker" ];
@@ -124,7 +133,7 @@ in {
   environment.systemPackages = with pkgs; [
     
     # GUI
-    firefox vlc waybar swww kitty
+    vlc waybar swww kitty
     mako libnotify rofi-wayland pamixer
     networkmanagerapplet brightnessctl
     (waybar.overrideAttrs (oldAttrs: {
@@ -132,20 +141,25 @@ in {
       })
     )
     webcord.packages.${system}.default
+    (pkgs.wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+      ];
+    })
+    obsidian
 
     # screenshot pkgs
-    grim slurp wl-clipboard
-    unzip
-    sudo
+    flameshot
    
     # dev
-    gcc cmake clang ninja distrobox
-    vscodium docker-compose git
-    (python3.withPackages py-pkgs)
+    docker-compose git vscodium
     
     # cli
-    wget ffmpeg file curl neofetch
-    starship fontfor
+    wget ffmpeg file curl pfetch
+    starship fontfor htop sudo
+    unzip
   ];
 
   system.stateVersion = "23.05";
