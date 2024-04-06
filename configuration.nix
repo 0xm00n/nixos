@@ -1,11 +1,5 @@
-{config, pkgs, ... }: 
-let
-   flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-   webcord = (import flake-compat {
-     src = builtins.fetchTarball "https://github.com/fufexan/webcord-flake/archive/master.tar.gz";
-   }).defaultNix;
-   obsidian = pkgs.callPackage ./packages/obsidian.nix {};
-in {
+{config, pkgs, ... }:
+{
   imports =
     [
       ./hardware-configuration.nix
@@ -13,17 +7,13 @@ in {
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.initrd.kernelModules = ["amdgpu"];
-
-  boot.loader.systemd-boot.enable =true;
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    v4l2loopback
-  ];
-  boot.extraModprobeConfig = ''
-    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-  '';
+  hardware.cpu.amd.updateMicrocode = true;
+  hardware.opengl.enable = true;
+
   security.polkit.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -49,27 +39,20 @@ in {
 
   services.dbus.enable = true;
 
-  # Enable sound.
+  # enable sound.
   sound = {
     enable = true;
     mediaKeys.enable = true;
   };
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
 
   # bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-  # Enable touchpad support.
+  # enable touchpad support.
   services.xserver.libinput.enable = true;
   services.xserver.libinput.touchpad.tapping = true;
   services.xserver.libinput.touchpad.naturalScrolling = true;
@@ -113,11 +96,6 @@ in {
   # docker
   virtualisation.docker.enable = true;
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
   # unfree pkgs
   nixpkgs.config = {
     allowUnfree = true;
@@ -130,8 +108,12 @@ in {
     shell = pkgs.fish;
   };
 
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+	
   environment.systemPackages = with pkgs; [
-    
     # GUI
     vlc waybar swww kitty
     mako libnotify rofi-wayland pamixer
@@ -140,27 +122,20 @@ in {
  	mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
       })
     )
-    webcord.packages.${system}.default
-    (pkgs.wrapOBS {
-      plugins = with pkgs.obs-studio-plugins; [
-        wlrobs
-        obs-backgroundremoval
-        obs-pipewire-audio-capture
-      ];
-    })
-    obsidian
+    firefox librewolf
 
     # screenshot pkgs
-    flameshot
+    jq grim slurp wl-clipboard 
    
     # dev
-    docker-compose git vscodium
-    
+    docker-compose git
+
     # cli
     wget ffmpeg file curl pfetch
     starship fontfor htop sudo
-    unzip
+    unzip zip glow circumflex
+    nnn
   ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }
