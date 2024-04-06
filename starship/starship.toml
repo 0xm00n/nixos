@@ -1,0 +1,12 @@
+format = ''' λ $directory$python$ocaml$docker_context ❯ '''
+
+scan_timeout = 10
+add_newline = false
+
+[python]
+symbol = '🐍 '
+pyenv_version_name = true
+style = 'green bold'
+
+[ocaml]
+format = 'via [🐪 $version]($style) '
