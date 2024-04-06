@@ -1,0 +1,97 @@
+{
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #e100ff; /* Font color set to #e100ff */
+    background-color: transparent; /* Background made transparent */
+    border-radius: 8px; /* Rounded corners for each module */
+}
+
+window#waybar {
+    border-bottom: none;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: 1px solid #e100ff; /* Border color for buttons */
+}
+
+button:hover {
+    box-shadow: inset 0 -3px #e100ff; /* Updated hover effect color */
+}
+
+#workspaces button {
+    padding: 0 5px;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    box-shadow: inset 0 -3px #e100ff; /* Updated focus effect color */
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    border-bottom: 3px solid #ffffff;
+}
+
+/* All modules now have transparent backgrounds and #e100ff borders */
+#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network, #pulseaudio, #wireplumber, #custom-media, #tray, #mode, #custom-gpu-usage {
+    padding: 0 10px;
+    background-color: transparent; /* Background set to transparent */
+    border: 1px solid #e100ff; /* Border color set */
+}
+
+#window, #workspaces {
+    margin: 0 4px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#battery.charging, #battery.plugged {
+    background-color: transparent;
+}
+
+@keyframes blink {
+    to {
+        background-color: transparent;
+        color: #e100ff;
+    }
+}
+
+#battery.critical:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: transparent;
+}
+
+#pulseaudio.muted {
+    color: #2a5c45;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
