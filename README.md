@@ -1,4 +1,4 @@
-# nixOS
+# nixos
 
 ```
   \\  \\ //      amon@wired
@@ -13,10 +13,10 @@
 <br>
 
 ## system hardware
-`ryzen 9 5900HX`
-`radeon RX 6800M`
-`64gb kingston fury impact DDR4 RAM`
-`intel ax210 wifi card`
+`Ryzen 9 5900HX` <br>
+`Radeon RX 6800M` <br>
+`64GB Kingston Fury Impact DDR4 RAM` <br>
+`Intel AX210 Wifi Card`
 
 
 ## software
