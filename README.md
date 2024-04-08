@@ -20,4 +20,5 @@
 
 
 ## software
-`nix shell for AI stuff: PyTorch 2.0.1 with ROCm`
+`nix shell for AI stuff: PyTorch 2.0.1 with ROCm`   
+- todo: update nixpkg to PyTorch 2.2.2 (latest stable, not a fun time bc of AMD)
