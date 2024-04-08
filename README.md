@@ -17,3 +17,7 @@
 `radeon RX 6800M`
 `64gb kingston fury impact DDR4 RAM`
 `intel ax210 wifi card`
+
+
+## software
+`nix shell for AI stuff: PyTorch 2.0.1 with ROCm`
